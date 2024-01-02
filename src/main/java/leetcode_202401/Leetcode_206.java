@@ -15,20 +15,12 @@ package leetcode_202401;
  * 输出：[]
  */
 public class Leetcode_206 {
-    private static class ListNode{
+    public static class ListNode {
         int val;
         ListNode next;
 
-        ListNode() {
-        }
-
         ListNode(int val) {
             this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
         }
     }
 
@@ -41,30 +33,42 @@ public class Leetcode_206 {
     }
 
     public static ListNode reverseList(ListNode head) {
-        // 头插法
-//        ListNode newHead = null;
-//        while (head != null){
-//            // 取出原链表头节点
-//            ListNode node = head;
-//            head = head.next;
-//
-//            // 头插法插入新链表
-//            node.next = newHead;
-//            newHead = node;
-//        }
-//        return newHead;
         // 迭代法
         ListNode prev = null;
         ListNode curr = head;
 
+//        1 -> 2 -> 3 -> 4 -> 5
         while (curr != null) {
+            /*
+                null -> 1 -> 2  初始
+                1 -> null -> 2
+                当前节点为1，上一节点为null，于是它的下一节点指向null，而上一节点变成了刚刚说明的当前节点 1（实际上的当前节点是null）
+                2 -> 1 -> null -> 3
+                那么下一个需要操作的节点 2，就是一开始保存的节点1的下一个节点，
+                因此，节点2为当前节点，它的下一节点指向上一个节点，而上一个节点是节点1
+
+             */
             ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
+            curr.next = prev; // 当前节点指向上一个节点
+            prev = curr; // 移动后的当前节点变成上一个节点
+            curr = nextTemp; // 下一次要操作的当前节点是一开始保存的下一个节点
         }
 
         return prev;
+        /*
+            -> 头插法
+            ListNode newHead = null;
+            while (head != null){
+                // 取出原链表头节点
+                ListNode node = head;
+                head = head.next;
+
+                // 头插法插入新链表
+                node.next = newHead;
+                newHead = node;
+            }
+            return newHead;
+        */
     }
 
     public static void main(String[] args) {

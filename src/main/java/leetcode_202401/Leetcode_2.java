@@ -18,20 +18,12 @@ package leetcode_202401;
  * 输出：[8,9,9,9,0,0,0,1]
  */
 public class Leetcode_2 {
-    private static class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
-        ListNode() {
-        }
-
         ListNode(int val) {
             this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
         }
     }
 
