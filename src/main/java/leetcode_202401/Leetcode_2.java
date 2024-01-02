@@ -35,6 +35,14 @@ public class Leetcode_2 {
         }
     }
 
+    /**
+     * 1.按位求和
+     * 2.进位
+     * 3.主要涉及链表的遍历
+     * @param l1 链表1
+     * @param l2 链表2
+     * @return 结果链表
+     */
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0); // 创建一个虚拟头节点
