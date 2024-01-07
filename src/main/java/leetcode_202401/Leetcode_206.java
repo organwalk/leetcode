@@ -1,5 +1,9 @@
 package leetcode_202401;
 
+import entity.ListNode;
+
+import static entity.ListNode.printListNode;
+
 /**
  * 206.反转链表
  * 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
@@ -15,22 +19,6 @@ package leetcode_202401;
  * 输出：[]
  */
 public class Leetcode_206 {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-
-    public static void printList(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
 
     public static ListNode reverseList(ListNode head) {
         // 迭代法
@@ -82,6 +70,6 @@ public class Leetcode_206 {
         ListNode reversedHead = reverseList(head);
 
         // 打印反转后的链表
-        printList(reversedHead);
+        printListNode(reversedHead);
     }
 }

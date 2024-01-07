@@ -1,17 +1,14 @@
 package leetcode_202401;
 
 
+import entity.ListNode;
+
+import static entity.ListNode.printListNode;
+
 /**
  * 19.删除链表的倒数第N个结点
  */
 public class Leetcode_19 {
-    public static class ListNode{
-        int val;
-        ListNode next;
-        ListNode(int val){
-            this.val = val;
-        }
-    }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         // 定义一个虚拟头节点
@@ -47,9 +44,6 @@ public class Leetcode_19 {
         head.next.next.next.next = new ListNode(5);
 
         ListNode result = removeNthFromEnd(head, 2);
-        while (result != null){
-            System.out.print(result.val + "->");
-            result = result.next;
-        }
+        printListNode(result);
     }
 }
