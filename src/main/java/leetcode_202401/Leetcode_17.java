@@ -24,7 +24,7 @@ public class Leetcode_17 {
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
 
-        if (digits == null || digits.length() == 0){
+        if (digits == null || digits.isEmpty()){
             return result;
         }
 
