@@ -25,7 +25,7 @@ public class Leetcode_189 {
             return ;
         }
         int n = nums.length;
-        k = k % n;
+        k = k % n; // 取余防止k超出数组长度后异常
 
 
         // 先翻转整个数组
